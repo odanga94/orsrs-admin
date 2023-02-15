@@ -15,7 +15,7 @@ import Tab from "@mui/material/Tab";
   },
 })); */
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(props) {
   // const theme = useTheme();
   // const classes = useStyles();
 
@@ -36,6 +36,7 @@ export default function ButtonAppBar() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2}}
+            onClick={props.toggleSideDrawer}
           >
             <MenuIcon fontSize="large" />
           </IconButton>

@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import "./App.css";
@@ -7,6 +8,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 import AppBar from "./components/Navigation/AppBar/AppBar";
+import SideDrawer from "./components/Navigation/SideDrawer/SideDrawer";
 import Auth from "./containers/Auth/Auth";
 
 const theme = createTheme({
@@ -27,11 +29,19 @@ const theme = createTheme({
 });
 
 function App() {
+  const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
+
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <AppBar />
-        <Auth/> 
+        <AppBar toggleSideDrawer={() => setSideDrawerOpen(true)} />
+        <SideDrawer
+          open={sideDrawerOpen}
+          closeDrawer={() => setSideDrawerOpen(false)}
+          activeRoute={/* props.location.pathname */""}
+          navigateHandler={/* navigate */() => {}}
+        />
+        <Auth />
       </div>
     </ThemeProvider>
   );
