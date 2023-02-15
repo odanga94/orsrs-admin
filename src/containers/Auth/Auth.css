@@ -1,0 +1,14 @@
+.root {
+    display: 'flex';
+    flex-wrap: 'wrap';
+    /* '& > *': {
+        margin: theme.spacing(20),
+        padding: theme.spacing(3),
+        paddingTop: theme.spacing(1),
+        width: theme.spacing(50),
+        height: theme.spacing(55),
+    }, */
+    align-items: 'center';
+    justify-content: 'center';
+    text-align: 'start';
+}
