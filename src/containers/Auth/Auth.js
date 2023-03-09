@@ -2,11 +2,11 @@ import "./Auth.css";
 
 import React, { useState } from "react";
 import { Paper, TextField, Button, CircularProgress } from "@mui/material";
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useTheme } from "@emotion/react";
 
 import logo from "../../assets/logo.png";
-// import * as authActions from '../../store/actions/user/auth';
+import * as authActions from '../../store/actions/user/auth';
 import { checkValidity } from "../../shared/utility";
 
 /* const useStyles = makeStyles((theme) => ({
@@ -37,7 +37,7 @@ export default function Auth() {
 
   const theme = useTheme();
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   // const classes = useStyles();
 
@@ -55,14 +55,14 @@ export default function Auth() {
       return;
     }
     setLogInLoading(true);
-    /* try {
+    try {
             await dispatch(authActions.logIn(email, password));
             setLogInLoading(false);
         } catch (err) {
             console.log(err);
             setLogInLoading(false);
             alert(err.message);
-        } */
+        }
   };
 
   return (
